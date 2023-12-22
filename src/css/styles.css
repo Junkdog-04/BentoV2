@@ -1,0 +1,168 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.main{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-areas: 
+  "one two three three"
+  "four four four four"
+  "four four four four"
+  "five five six seven";
+  grid-gap: 5px;
+}
+
+.main__image{
+  width: calc(100% - 1rem * 2);
+  height: 250px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .4s ease-in-out;
+  opacity: 0;
+  background-color: #134077;
+}
+
+#main__image--big{
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .4s ease-in-out;
+  opacity: 0;
+  background-color: #134077;
+}
+
+#main__image--big:hover{
+  transform: scale(1.1);
+  transition: .4s ease;
+  opacity: 1;
+}
+
+img:nth-child(1){
+  grid-area: one;
+}
+
+img:nth-child(2){
+  grid-area: two;
+}
+
+img:nth-child(3){
+  grid-area: three;
+}
+
+img:hover{
+  transform: scale(1.1);
+  transition: .4s ease;
+  opacity: 1;
+}
+
+img:nth-child(5){
+  grid-area: five;
+  opacity: 1;
+}
+
+img:nth-child(6){
+  grid-area: six;
+}
+
+img:nth-child(7){
+  grid-area: seven;
+}
+
+h1{
+  grid-area: four;
+  font-weight: 900;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 50px;
+  background-color: #74DFD5;
+  color: #134077;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+
+
+@media screen and (max-width: 768px){
+  body{
+    width: auto;
+    height: auto;
+  }
+  .main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six"
+    "seven";
+  }
+
+  .main__image{
+    width: 100%;
+    object-fit: contain;
+    height: inherit;
+    transition: .4s ease-in-out;
+  }
+
+  #main__image--big{
+    width: 100%;
+    object-fit: contain;
+    height: inherit;
+    transition: .4s ease-in-out;
+  }
+
+  
+  img:nth-child(1){
+    grid-area: one;
+  }
+  
+  img:nth-child(2){
+    grid-area: two;
+  }
+  
+  img:nth-child(3){
+    grid-area: three;
+  }
+
+  img:hover{
+    transform: scale(1.1);
+    transition: .4s ease;
+  }
+  
+  img:nth-child(5){
+    grid-area: five;
+  }
+  
+  img:nth-child(6){
+    grid-area: six;
+  }
+  
+  img:nth-child(7){
+    grid-area: seven;
+  }
+
+  h1{
+    grid-area: four;
+    font-size: 16px;
+  }
+}
